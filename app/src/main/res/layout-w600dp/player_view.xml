@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="@dimen/dimen_35"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <TextView
+        android:id="@+id/player_txt"
+        style="@style/WarOfSuits.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player_score_txt"
+        style="@style/WarOfSuits.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_score"
+        android:layout_marginEnd="@dimen/dimen_10"
+        app:layout_constraintTop_toTopOf="@id/player_txt"
+        app:layout_constraintBottom_toBottomOf="@id/player_txt"
+        app:layout_constraintEnd_toStartOf="@id/player_score"/>
+
+    <TextView
+        android:id="@+id/player_score"
+        style="@style/WarOfSuits.Bold"
+        android:text="@string/player_score_init_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/player_score"
+        app:layout_constraintBottom_toBottomOf="@id/player_score"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/user_cards_frame"
+        android:layout_width="@dimen/dimen_120"
+        android:layout_height="@dimen/dimen_200"
+        android:background="@drawable/background_rounded_stroke"
+        android:padding="@dimen/dimen_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_txt"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.sandra.warofsuits.widget.PokerCardView
+        android:id="@+id/user_cards"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dimen_5"
+        app:card_show="false"
+        app:layout_constraintTop_toTopOf="@+id/user_cards_frame"
+        app:layout_constraintBottom_toBottomOf="@+id/user_cards_frame"
+        app:layout_constraintStart_toStartOf="@+id/user_cards_frame"
+        app:layout_constraintEnd_toEndOf="@+id/user_cards_frame"/>
+
+    <ImageView
+        android:id="@+id/next_card_frame"
+        android:layout_width="@dimen/dimen_120"
+        android:layout_height="@dimen/dimen_200"
+        android:background="@drawable/background_rounded_stroke"
+        android:padding="@dimen/dimen_3"
+        app:layout_constraintStart_toEndOf="@id/user_cards_frame"
+        app:layout_constraintEnd_toStartOf="@id/discards_cards_frame"
+        app:layout_constraintTop_toBottomOf="@+id/player_txt"
+        app:layout_constraintBottom_toTopOf="@id/user_cards_frame"/>
+
+    <com.sandra.warofsuits.widget.PokerCardView
+        android:id="@+id/next_card"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dimen_5"
+        app:card_show="false"
+        app:layout_constraintTop_toTopOf="@+id/next_card_frame"
+        app:layout_constraintBottom_toBottomOf="@+id/next_card_frame"
+        app:layout_constraintStart_toStartOf="@+id/next_card_frame"
+        app:layout_constraintEnd_toEndOf="@+id/next_card_frame"/>
+
+    <ImageView
+        android:id="@+id/discards_cards_frame"
+        android:layout_width="@dimen/dimen_120"
+        android:layout_height="@dimen/dimen_200"
+        android:background="@drawable/background_rounded_stroke"
+        android:padding="@dimen/dimen_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_txt"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.sandra.warofsuits.widget.PokerCardView
+        android:id="@+id/discards_cards"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dimen_5"
+        app:card_show="true"
+        app:layout_constraintTop_toTopOf="@+id/discards_cards_frame"
+        app:layout_constraintBottom_toBottomOf="@+id/discards_cards_frame"
+        app:layout_constraintStart_toStartOf="@+id/discards_cards_frame"
+        app:layout_constraintEnd_toEndOf="@+id/discards_cards_frame"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
